@@ -54,7 +54,7 @@ const Conference = () => {
                   <input
                     type="text"
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
-                    className="text-black block outline-none text-xl font-semibold border-b focus:border-brand-secondary transition py-3"
+                    className="text-black block outline-none text-xl font-semibold border-b focus:border-brand-secondary transition py-3 w-full lg:w-auto"
                   />
                 </label>
               )}
@@ -66,7 +66,7 @@ const Conference = () => {
                     onChange={(e) =>
                       setForm({ ...form, email: e.target.value })
                     }
-                    className="text-black block outline-none text-xl font-semibold border-b focus:border-brand-secondary transition py-3"
+                    className="text-black block outline-none text-xl font-semibold border-b focus:border-brand-secondary transition py-3 w-full lg:w-auto"
                   />
                 </label>
               )}
