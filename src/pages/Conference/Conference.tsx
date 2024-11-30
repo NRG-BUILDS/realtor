@@ -21,7 +21,7 @@ const Conference = () => {
     console.log("yay");
   };
   return (
-    <main className="relative lg:overflow-x-clip flex items-center min-h-screen min-w-[100vw] bg-black">
+    <main className="relative lg:overflow-x-clip lg:flex items-center min-h-screen max-w-[100svw] bg-black">
       {/* background image */}
       <img
         src={background}
@@ -30,7 +30,6 @@ const Conference = () => {
       />
       {/* linear gradient background */}
       <div className="bg-gradient-to-tl from-brand-primary via-brand-secondary to-brand-tertiary opacity-[0.72] fixed top-0 left-0 w-full h-full" />
-
       <div className="container p-4 mx-auto w-full flex flex-col md:flex-row items-center gap-20 justify-between text-white relative z-10">
         <div className="flex flex-col w-full lg:min-w-[500px] max-w-[800px] gap-3">
           <div className="w-full max-w-[544px]">
@@ -109,22 +108,19 @@ const Conference = () => {
               // When the window width is >= 640px
               640: {
                 slidesPerView: 1,
-                spaceBetween: 20,
               },
               // When the window width is >= 768px
               768: {
                 slidesPerView: 2,
-                spaceBetween: 30,
               },
               // When the window width is >= 1024px
               1024: {
                 slidesPerView: 3,
-                spaceBetween: 40,
               },
             }}
           >
             {images.map((img, index) => (
-              <SwiperSlide key={index} className="">
+              <SwiperSlide key={index} className="ml-4">
                 <div className=" bg-gray-200  rounded-lg overflow-clip text-black w-[310px] h-[370px] ">
                   <img
                     src={img}
@@ -137,6 +133,22 @@ const Conference = () => {
           </Swiper>
         </div>
       </div>
+      <footer className="z-50 static lg:fixed bottom-0 left-0 w-full bg-opacity-15 border-b border-white border-opacity-20 backdrop-blur py-4">
+        <div className="container text-white mx-auto px-2 flex flex-col lg:flex-row items-center  gap-10 *:py-10  lg:*:py-0 justify-between divide-y lg:divide-y-0 lg:divide-x divide-opacity-5">
+          <div className="flex flex-col items-center gap-1 w-full">
+            <h3 className="font-semibold text-sm">DATE</h3>
+            <h4 className="text-3xl">23 | 09 | 2025</h4>
+          </div>
+          <div className="flex flex-col items-center gap-1 w-full">
+            <h3 className="font-semibold text-sm">VENUE</h3>
+            <h4 className="text-3xl">Eko Hotels & Suites</h4>
+          </div>
+          <div className="flex flex-col items-center gap-1 w-full">
+            <h3 className="font-semibold text-sm">TIME</h3>
+            <h4 className="text-3xl">8pm</h4>
+          </div>
+        </div>
+      </footer>
     </main>
   );
 };
