@@ -1,4 +1,4 @@
-import background from "../../assets/images/backgrounds/BG Screen Picture 3.png";
+import background from "../../assets/images/backgrounds/Marina-at-Dusk.jpg";
 import person1 from "../../assets/images/avatars/Speakers-bureau-business-event-speaker-for-your-event-speaking-fees-corporate-events-speaking-fee-college-students-next-event.jpg";
 import person2 from "../../assets/images/avatars/picture 3.png";
 import person3 from "../../assets/images/avatars/picture 4.png";
@@ -29,23 +29,23 @@ const Conference = () => {
         className="fixed top-0 left-0 w-full h-full object-cover"
       />
       {/* linear gradient background */}
-      <div className="bg-gradient-to-tl from-brand-primary via-brand-secondary to-brand-tertiary opacity-[0.72] fixed top-0 left-0 w-full h-full" />
+      <div className="bg-gradient-to-tl from-brand-secondary via-brand-primary to-brand-tertiary opacity-[0.72] fixed top-0 left-0 w-full h-full" />
       <div className="container p-4 mx-auto w-full flex flex-col md:flex-row items-center gap-20 justify-between text-white relative z-10">
         <div className="flex flex-col w-full lg:min-w-[500px] max-w-[800px] gap-3">
           <div className="w-full max-w-[544px]">
             <h1 className="text-6xl leading-[72px] tracking-tighter">
-              Join Us in Online Live Chat Sessions
+              Join us on the TenX side of <i>life</i>
             </h1>
             <p className="pt-4 pb-16 max-w-[416px]">
-              Embrace the opportunity to chat with the staff of the
-              International Assembly. Let’s discuss how together we can preserve
-              the ozone layer.
+              Ten Thousand Seeds is committed to creating a dynamic and
+              innovative work environment that fosters growth,excellence and
+              sustainability.
             </p>
           </div>
-          <div className="bg-white text-gray-500 rounded-lg p-4 flex flex-col md:flex-row items-stretch justify-between w-full gap-8">
+          <div className="bg-white text-gray-500 rounded-2xl flex flex-col md:flex-row items-stretch justify-between w-full gap-8">
             <div
               className={`transition-all text-black duration-700 ${
-                formPart === 0 ? "sr-only" : ""
+                formPart === 0 ? "sr-only" : "p-4"
               }`}
             >
               {formPart === 1 && (
@@ -86,7 +86,7 @@ const Conference = () => {
                     handleSubmit();
                   }
                 }}
-                className="absolute top-0 left-0 font-semibold bg-gradient-to-t active:bg-gradient-to-b transition-all from-[#4E4DB2] to-[#6E6DC0] rounded-md h-full w-full shadow-md hover:shadow-lg flex items-center justify-center text-white disabled:opacity-50"
+                className="absolute top-0 left-0 font-semibold  transition-all bg-brand-secondary rounded-md lg:rounded-2xl lg:rounded-l-none h-full w-full shadow-md hover:shadow-lg flex items-center justify-center text-white disabled:opacity-50"
               >
                 {formPart === 1 ? "Next" : "Register"}
               </button>

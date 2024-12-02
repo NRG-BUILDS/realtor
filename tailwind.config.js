@@ -14,9 +14,9 @@ export default {
       },
       colors: {
         brand: {
-          primary: "#300065",
-          secondary: "#4946E7",
-          tertiary: "#300065",
+          primary: "#31391d",
+          secondary: "#b09300",
+          tertiary: "#000404",
         },
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
