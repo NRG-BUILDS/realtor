@@ -76,7 +76,7 @@ const Navbar = () => {
               <p>
                 The TenX event is scheduled to hold between Lorem ipsum dolor
                 sit amet, consectetur adipisicing elit. Facilis inventore
-                commodi, ad earum veniam!
+                commodi, ad earum veniamo!
               </p>
               <br />
               <p>
