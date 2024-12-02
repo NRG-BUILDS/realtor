@@ -11,14 +11,38 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Autoplay } from "swiper/modules";
 import { useState } from "react";
+import useRequest from "@/hooks/useRequest";
+import { useToast } from "@/hooks/use-toast";
+
+interface ApiResponse {
+  message: string;
+  success: boolean;
+}
 
 const Conference = () => {
   const [form, setForm] = useState({ name: "", email: "" });
   const [formPart, setFormPart] = useState(0);
   const images = [person1, person2, person3, person4, person5];
+  const { toast } = useToast();
+  const { loading, makeRequest } = useRequest<ApiResponse>(
+    "/waitlist/conference"
+  );
 
-  const handleSubmit = () => {
-    console.log("yay");
+  const handleSubmit = async () => {
+    const res = await makeRequest(form);
+    // @ts-ignore
+    if (res.status === "success") {
+      toast({
+        variant: "success",
+        title: "Your details have been submitted successfully",
+      });
+    } else {
+      toast({
+        variant: "destructive",
+        title: "Failed to submit details",
+        description: res?.message,
+      });
+    }
   };
   return (
     <main className="relative lg:overflow-x-clip lg:flex items-center min-h-screen max-w-[100svw] bg-black">
@@ -86,9 +110,15 @@ const Conference = () => {
                     handleSubmit();
                   }
                 }}
-                className="absolute top-0 left-0 font-semibold  transition-all bg-brand-secondary rounded-md lg:rounded-2xl lg:rounded-l-none h-full w-full shadow-md hover:shadow-lg flex items-center justify-center text-white disabled:opacity-50"
+                disabled={loading}
+                className="absolute overflow-clip top-0 left-0 font-semibold  transition-all bg-brand-secondary rounded-md lg:rounded-2xl lg:rounded-l-none h-full w-full shadow-md hover:shadow-lg flex items-center justify-center text-white disabled:opacity-50"
               >
                 {formPart === 1 ? "Next" : "Register"}
+                {loading && (
+                  <div className="absolute  top-0 left-0 w-full h-full bg-inherit flex items-center justify-center">
+                    <div className="rounded-full size-10 border border-white border-b-0 animate-spin "></div>
+                  </div>
+                )}
               </button>
             </div>
           </div>
@@ -121,12 +151,17 @@ const Conference = () => {
           >
             {images.map((img, index) => (
               <SwiperSlide key={index} className="ml-4">
-                <div className=" bg-gray-200  rounded-lg overflow-clip text-black w-[310px] h-[370px] ">
+                <div className="relative bg-gray-200  rounded-lg overflow-clip text-black w-[310px] h-[370px] ">
                   <img
                     src={img}
                     alt=""
                     className="w-full h-full object-cover"
                   />
+                  {index === 1 ? (
+                    <span className="bg-black absolute top-0 w-full">
+                      Hello
+                    </span>
+                  ) : null}
                 </div>
               </SwiperSlide>
             ))}
