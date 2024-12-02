@@ -40,6 +40,7 @@ const Navbar = () => {
         variant: "success",
         title: "Your details have been submitted successfully",
       });
+      setOpenDialog(false);
     } else {
       toast({
         variant: "destructive",
@@ -135,7 +136,7 @@ const Navbar = () => {
                   required
                   onChange={handleInput}
                   type="number"
-                  placeholder="e.g. 1 year"
+                  placeholder="e.g. 1"
                   className="col-span-4 lg:col-span-3 border rounded p-3 text-sm"
                 />
               </div>

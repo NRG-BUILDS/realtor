@@ -77,8 +77,9 @@ const Conference = () => {
                   <span>Your full name</span>
                   <input
                     type="text"
+                    placeholder="Enter your full name"
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
-                    className="text-black block outline-none text-xl font-semibold border-b focus:border-brand-secondary transition py-3 w-full lg:w-auto"
+                    className="text-black placeholder:text-gray-300 block outline-none text-xl font-semibold border-b focus:border-brand-secondary transition py-3 w-full lg:w-auto"
                   />
                 </label>
               )}
@@ -87,10 +88,11 @@ const Conference = () => {
                   <span>Provide an email address</span>
                   <input
                     type="email"
+                    placeholder="Enter your email"
                     onChange={(e) =>
                       setForm({ ...form, email: e.target.value })
                     }
-                    className="text-black block outline-none text-xl font-semibold border-b focus:border-brand-secondary transition py-3 w-full lg:w-auto"
+                    className="text-black placeholder:text-gray-300 block outline-none text-xl font-semibold border-b focus:border-brand-secondary transition py-3 w-full lg:w-auto"
                   />
                 </label>
               )}
