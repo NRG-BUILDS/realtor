@@ -13,7 +13,7 @@ function App() {
       <Router>
         <div className="relative">
           <Navbar />
-          <div className="relative lg:mt-28">
+          <div className="relative lg:mt-0">
             <Routes>
               <Route path="/academy" element={<Academy />} />
               <Route path="/" element={<Conference />} />

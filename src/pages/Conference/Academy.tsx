@@ -58,7 +58,7 @@ const Academy = () => {
     return;
   };
   return (
-    <main className="lg:overflow-x-clip lg:flex items-end min-h-svh absolute top-0 left-0 w-full max-w-[100svw] bg-black">
+    <main className="lg:overflow-x-clip lg:flex items-start min-h-svh lg:min-h-0 lg:h-auto absolute top-0 left-0 w-full max-w-[100svw] bg-black">
       {/* background image */}
       <img
         src={background}
@@ -69,7 +69,7 @@ const Academy = () => {
       <div className="bg-gradient-to-tl from-brand-secondary via-brand-primary to-brand-tertiary opacity-[0.72] fixed top-0 left-0 w-full h-full" />
       <div className="container p-0 mx-auto w-full flex flex-col md:flex-row items-center lg:h-[90svh] lg:items-stretch gap-20 justify-between text-white relative z-10">
         {/* details */}
-        <div className="p-4 flex flex-col self-center w-full lg:min-w-[500px] max-w-[800px] gap-3">
+        <div className="p-4 flex flex-col self-center w-full lg:min-w-[500px] max-w-[600px] gap-3">
           <div className="w-full max-w-[544px]">
             <h1 className="text-6xl leading-[72px] tracking-tighter">
               The <b className="italic">TenX Academy</b>
@@ -201,7 +201,7 @@ interface ProgressiveImageProps {
   className?: string; // Optional CSS class for the wrapper
 }
 
-const ProgressiveImage: React.FC<ProgressiveImageProps> = ({
+export const ProgressiveImage: React.FC<ProgressiveImageProps> = ({
   lowResSrc,
   highResSrc,
   alt,
