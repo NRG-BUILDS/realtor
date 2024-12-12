@@ -20,6 +20,9 @@ function App() {
               <Route path="/about-us" element={<AboutUs />} />
             </Routes>
           </div>
+          <footer className="py-4 flex flex-col lg:flex-row justify-evenly gap-5">
+            <div className="grid"></div>
+          </footer>
         </div>
       </Router>
     </>

@@ -12,23 +12,22 @@ const Navbar = () => {
 
   return (
     <nav className="z-50 sticky lg:fixed top-0 left-0 w-full bg-white bg-opacity-5 border-b border-white border-opacity-20 backdrop-blur py-4">
-      <div className="container text-white mx-auto px-2 flex items-center justify-between">
+      <div className="container text-white text-sm mx-auto px-2 flex items-center justify-between">
         <Link to={"/"}>
           <img src={logo} alt="" className="h-24" />
         </Link>
 
-        <div className="flex items-center lg:gap-10 justify-end gap-3">
-          
+        <div className="flex flex-col lg:flex-row items-end lg:items-center lg:gap-10 justify-end gap-3">
           <Link
             to={"/academy"}
-            className={`hover:bg-gray-200 text-white hover:underline text-primary ${
+            className={`text-white hover:underline text-primary ${
               navLink.startsWith("/academy") ? `underline` : ""
             }`}
           >
-            TENX ACADEMY 
+            TENX ACADEMY
           </Link>
           <Link
-            to={"/"} 
+            to={"/"}
             className={`hover:bg-gray-200 text-white hover:underline text-primary ${
               navLink === "/" ? `underline` : ""
             }`}
