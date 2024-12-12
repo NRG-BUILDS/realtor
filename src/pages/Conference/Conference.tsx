@@ -47,12 +47,10 @@ const Conference = () => {
         <div className="flex flex-col w-full lg:min-w-[500px] max-w-[600px] gap-3">
           <div className="w-full max-w-[544px]">
             <h1 className="text-6xl leading-[72px] tracking-tighter">
-              Join us on the TenX side of <i>life</i>
+              Switch to the TenX Side of things
             </h1>
             <p className="pt-4 pb-16 max-w-[416px]">
-              Transform your Real Estate career. <b>Join the TenX Academy</b>{" "}
-              and discover the secrets to exponential success in the global real
-              estate indusry
+              Make history at the TenX Leadership Conference on the 19th to 20th December 2024.
             </p>
           </div>
           <div className="bg-white text-gray-500 rounded-2xl flex flex-col md:flex-row items-stretch justify-between w-full gap-8">
