@@ -1,9 +1,15 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router";
 import logo from "@/assets/images/tenxseeds.png";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 
 const Navbar = () => {
   const [navLink, setNavLink] = useState("");
+  const [openPopover, setOpenPopover] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -17,7 +23,7 @@ const Navbar = () => {
           <img src={logo} alt="" className="h-24" />
         </Link>
 
-        <div className="flex flex-col lg:flex-row items-end lg:items-center lg:gap-10 justify-end gap-3">
+        <div className="hidden md:flex flex-col lg:flex-row items-end lg:items-center lg:gap-10 justify-end gap-3">
           <Link
             to={"/academy"}
             className={`text-white hover:underline text-primary ${
@@ -42,6 +48,42 @@ const Navbar = () => {
           >
             LEARN MORE
           </Link>
+        </div>
+        <div className="md:hidden pr-4">
+          <Popover open={openPopover} onOpenChange={setOpenPopover}>
+            <PopoverTrigger>Menu</PopoverTrigger>
+            <PopoverContent>
+              <div className="grid gap-4">
+                <Link
+                  to={"/academy"}
+                  onClick={() => setOpenPopover(false)}
+                  className={`hover:underline ${
+                    navLink.startsWith("/academy") ? `underline` : ""
+                  }`}
+                >
+                  TENX ACADEMY
+                </Link>
+                <Link
+                  to={"/"}
+                  onClick={() => setOpenPopover(false)}
+                  className={`hover:underline ${
+                    navLink === "/" ? `underline` : ""
+                  }`}
+                >
+                  TENX CONFERENCE
+                </Link>
+                <Link
+                  to={"/about-us"}
+                  onClick={() => setOpenPopover(false)}
+                  className={`hover:underline ${
+                    navLink.startsWith("/about-us") ? `underline` : ""
+                  }`}
+                >
+                  LEARN MORE
+                </Link>
+              </div>
+            </PopoverContent>
+          </Popover>
         </div>
       </div>
     </nav>

@@ -67,7 +67,7 @@ const Academy = () => {
       />
       {/* linear gradient background */}
       <div className="bg-gradient-to-tl from-brand-secondary via-brand-primary to-brand-tertiary opacity-[0.72] fixed top-0 left-0 w-full h-full" />
-      <div className="container p-0 mx-auto w-full flex flex-col md:flex-row items-center lg:h-[90svh] lg:items-stretch gap-20 justify-between text-white relative z-10">
+      <div className="container p-0 mx-auto w-full flex flex-row items-center lg:h-[90svh] lg:items-stretch gap-20 justify-between text-white relative z-10">
         {/* details */}
         <div className="p-4 flex flex-col self-center w-full lg:min-w-[500px] max-w-[600px] gap-3">
           <div className="w-full max-w-[544px]">
