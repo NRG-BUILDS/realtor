@@ -18,13 +18,22 @@ const Navbar = () => {
         </Link>
 
         <div className="flex items-center lg:gap-10 justify-end gap-3">
+          
           <Link
             to={"/academy"}
             className={`hover:bg-gray-200 text-white hover:underline text-primary ${
               navLink.startsWith("/academy") ? `underline` : ""
             }`}
           >
-            Academy
+            TENX ACADEMY 
+          </Link>
+          <Link
+            to={"/"} 
+            className={`hover:bg-gray-200 text-white hover:underline text-primary ${
+              navLink === "/" ? `underline` : ""
+            }`}
+          >
+            TENX CONFERENCE
           </Link>
           <Link
             to={"/about-us"}
@@ -32,7 +41,7 @@ const Navbar = () => {
               navLink.startsWith("/about-us") ? `underline` : ""
             }`}
           >
-            About Us
+            LEARN MORE
           </Link>
         </div>
       </div>
