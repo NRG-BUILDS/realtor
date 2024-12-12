@@ -1,15 +1,5 @@
 import background from "../../assets/images/backgrounds/Marina-at-Dusk.jpg";
-import person1 from "../../assets/images/avatars/Speakers-bureau-business-event-speaker-for-your-event-speaking-fees-corporate-events-speaking-fee-college-students-next-event.jpg";
-import person2 from "../../assets/images/avatars/picture 3.png";
-import person3 from "../../assets/images/avatars/picture 4.png";
-import person4 from "../../assets/images/avatars/real-estate-property.jpg";
-import person5 from "../../assets/images/avatars/real-estate-property.jpg";
 
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-// @ts-ignore
-import "swiper/css";
-import { Autoplay } from "swiper/modules";
 import { useState } from "react";
 import useRequest from "@/hooks/useRequest";
 import { useToast } from "@/hooks/use-toast";
@@ -22,7 +12,6 @@ interface ApiResponse {
 const Conference = () => {
   const [form, setForm] = useState({ name: "", email: "" });
   const [formPart, setFormPart] = useState(0);
-  const images = [person1, person2, person3, person4, person5];
   const { toast } = useToast();
   const { loading, makeRequest } = useRequest<ApiResponse>(
     "/waitlist/conference"
@@ -61,9 +50,9 @@ const Conference = () => {
               Join us on the TenX side of <i>life</i>
             </h1>
             <p className="pt-4 pb-16 max-w-[416px]">
-              Ten Thousand Seeds is committed to creating a dynamic and
-              innovative work environment that fosters growth,excellence and
-              sustainability.
+              Transform your Real Estate career. <b>Join the TenX Academy</b>{" "}
+              and discover the secrets to exponential success in the global real
+              estate indusry
             </p>
           </div>
           <div className="bg-white text-gray-500 rounded-2xl flex flex-col md:flex-row items-stretch justify-between w-full gap-8">
@@ -89,6 +78,7 @@ const Conference = () => {
                   <input
                     type="email"
                     placeholder="Enter your email"
+                    autoFocus
                     onChange={(e) =>
                       setForm({ ...form, email: e.target.value })
                     }
@@ -127,65 +117,8 @@ const Conference = () => {
         </div>
 
         {/* image cards */}
-        <div className="w-full lg:w-[60vw]">
-          <Swiper
-            spaceBetween={40}
-            slidesPerView={"auto"}
-            centeredSlides={true}
-            loop={true}
-            modules={[Autoplay]}
-            autoplay={{ delay: 6000, disableOnInteraction: false }}
-            onSwiper={(swiper) => console.log(swiper)}
-            breakpoints={{
-              // When the window width is >= 640px
-              640: {
-                slidesPerView: 1,
-              },
-              // When the window width is >= 768px
-              768: {
-                slidesPerView: 2,
-              },
-              // When the window width is >= 1024px
-              1024: {
-                slidesPerView: 3,
-              },
-            }}
-          >
-            {images.map((img, index) => (
-              <SwiperSlide key={index} className="ml-4">
-                <div className="relative bg-gray-200  rounded-lg overflow-clip text-black w-[310px] h-[370px] ">
-                  <img
-                    src={img}
-                    alt=""
-                    className="w-full h-full object-cover"
-                  />
-                  {index === 1 ? (
-                    <span className="bg-black absolute top-0 w-full">
-                      Hello
-                    </span>
-                  ) : null}
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
+        <div className="w-full lg:w-[60vw]"></div>
       </div>
-      <footer className="z-50 static lg:fixed bottom-0 left-0 w-full bg-opacity-15 border-b border-white border-opacity-20 backdrop-blur py-4">
-        <div className="container text-white mx-auto px-2 flex flex-col lg:flex-row items-center  gap-10 *:py-10  lg:*:py-0 justify-between divide-y lg:divide-y-0 lg:divide-x divide-opacity-5">
-          <div className="flex flex-col items-center gap-1 w-full">
-            <h3 className="font-semibold text-sm">DATE</h3>
-            <h4 className="text-3xl">23 | 09 | 2025</h4>
-          </div>
-          <div className="flex flex-col items-center gap-1 w-full">
-            <h3 className="font-semibold text-sm">VENUE</h3>
-            <h4 className="text-3xl">Eko Hotels & Suites</h4>
-          </div>
-          <div className="flex flex-col items-center gap-1 w-full">
-            <h3 className="font-semibold text-sm">TIME</h3>
-            <h4 className="text-3xl">8pm</h4>
-          </div>
-        </div>
-      </footer>
     </main>
   );
 };
