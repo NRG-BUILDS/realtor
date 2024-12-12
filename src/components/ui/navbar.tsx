@@ -28,7 +28,7 @@ const Navbar = () => {
           </Link>
           <Link
             to={"/"}
-            className={`hover:bg-gray-200 text-white hover:underline text-primary ${
+            className={`text-white hover:underline text-primary ${
               navLink === "/" ? `underline` : ""
             }`}
           >
@@ -36,7 +36,7 @@ const Navbar = () => {
           </Link>
           <Link
             to={"/about-us"}
-            className={`hover:bg-gray-200 text-white hover:underline text-primary ${
+            className={`text-white hover:underline text-primary ${
               navLink.startsWith("/about-us") ? `underline` : ""
             }`}
           >

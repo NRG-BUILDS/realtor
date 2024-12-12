@@ -1,10 +1,8 @@
 import background from "../../assets/images/backgrounds/Marina-at-Dusk.jpg";
-import person from "../../assets/images/avatars/tenxseeds_home.png";
 
 import { useState } from "react";
 import useRequest from "@/hooks/useRequest";
 import { useToast } from "@/hooks/use-toast";
-import { ProgressiveImage } from "./Academy";
 
 interface ApiResponse {
   message: string;
@@ -36,7 +34,7 @@ const Conference = () => {
     }
   };
   return (
-    <main className="lg:overflow-x-clip lg:flex items-start min-h-svh lg:min-h-0 lg:h-auto absolute top-0 left-0 w-full max-w-[100svw] bg-black">
+    <main className="lg:overflow-x-clip lg:flex items-start min-h-svh lg:min-h-96 lg:h-auto absolute top-0 left-0 w-full max-w-[100svw] bg-black">
       {/* background image */}
       <img
         src={background}
@@ -45,8 +43,8 @@ const Conference = () => {
       />
       {/* linear gradient background */}
       <div className="bg-gradient-to-tl from-brand-secondary via-brand-primary to-brand-tertiary opacity-[0.72] fixed top-0 left-0 w-full h-full" />
-      <div className="container p-0 mx-auto w-full flex flex-col md:flex-row items-center lg:h-[90svh] lg:items-stretch gap-20 justify-between text-white relative z-10">
-        <div className="p-4 flex flex-col w-full lg:min-w-[500px] max-w-[600px] gap-3">
+      <div className="container p-4 mx-auto w-full flex flex-col md:flex-row items-center gap-20 justify-between text-white relative z-10">
+        <div className="flex flex-col w-full lg:min-w-[500px] max-w-[600px] gap-3">
           <div className="w-full max-w-[544px]">
             <h1 className="text-6xl leading-[72px] tracking-tighter">
               Join us on the TenX side of <i>life</i>
@@ -118,15 +116,8 @@ const Conference = () => {
           </div>
         </div>
 
-        {/* image card */}
-        <div className="w-full h-[500px] lg:h-auto lg:w-[60vw]">
-          <ProgressiveImage
-            lowResSrc={person}
-            highResSrc={person}
-            alt="Sample Image"
-            className="size-full"
-          />
-        </div>
+        {/* image cards */}
+        <div className="w-full lg:w-[60vw]"></div>
       </div>
     </main>
   );
