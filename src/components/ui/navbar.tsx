@@ -6,6 +6,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { LucideMenu, LucideX } from "lucide-react";
 
 const Navbar = () => {
   const [navLink, setNavLink] = useState("");
@@ -51,7 +52,9 @@ const Navbar = () => {
         </div>
         <div className="md:hidden pr-4">
           <Popover open={openPopover} onOpenChange={setOpenPopover}>
-            <PopoverTrigger>Menu</PopoverTrigger>
+            <PopoverTrigger>
+              {openPopover ? <LucideX size={30} /> : <LucideMenu size={30} />}
+            </PopoverTrigger>
             <PopoverContent>
               <div className="grid gap-4">
                 <Link
