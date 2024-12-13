@@ -67,7 +67,7 @@ const Academy = () => {
       />
       {/* linear gradient background */}
       <div className="bg-gradient-to-tl from-brand-secondary via-brand-primary to-brand-tertiary opacity-[0.72] fixed top-0 left-0 w-full h-full" />
-      <div className="container p-0 mx-auto w-full flex flex-row items-center lg:h-[90svh] lg:items-stretch gap-20 justify-between text-white relative z-10">
+      <div className="container p-0 lg:pt-32 mx-auto w-full flex flex-row items-center fixed lg:relative top-0 left-0 h-[100svh] lg:items-stretch gap-20 justify-between text-white z-10">
         {/* details */}
         <div className="p-4 flex flex-col self-center w-full lg:min-w-[500px] max-w-[600px] gap-3">
           <div className="w-full max-w-[544px]">
@@ -92,10 +92,17 @@ const Academy = () => {
               </button>
             </div>
           </div>
+          <div className="fixed md:hidden bottom-1 right-0 -z-10 h-[70vh] w-[100vw]">
+            <img
+              src={person1}
+              alt=""
+              className="size-full w-auto object-cover filter saturate-50 brightness-50"
+            />
+          </div>
         </div>
 
         {/* image card */}
-        <div className="w-full h-[500px] lg:h-auto lg:w-[60vw]">
+        <div className="w-full h-[500px] md:block hidden lg:h-auto lg:w-[60vw]">
           <ProgressiveImage
             lowResSrc={person1Low}
             highResSrc={person1}

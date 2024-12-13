@@ -43,13 +43,13 @@ const Conference = () => {
       />
       {/* linear gradient background */}
       <div className="bg-gradient-to-tl from-brand-secondary via-brand-primary to-brand-tertiary opacity-[0.72] fixed top-0 left-0 w-full h-full" />
-      <div className="container p-4 mx-auto w-full flex flex-col md:flex-row items-center gap-20 justify-between text-white relative z-10">
-        <div className="flex flex-col w-full lg:min-w-[500px] max-w-[600px] gap-3">
+      <div className="container p-0 pt-16 overflow-y-auto lg:pt-32 mx-auto w-full flex flex-row items-center fixed lg:relative top-0 left-0 h-[100svh] lg:items-stretch gap-20 justify-between text-white z-10">
+        <div className="p-4 flex flex-col self-center w-full lg:min-w-[500px] max-w-[600px] gap-3">
           <div className="w-full max-w-[544px]">
             <h1 className="text-6xl leading-[72px] tracking-tighter">
-              Join us on the TenX side of <i>life</i>
+              Join us on the <b>TenX</b> side of <i>life</i>
             </h1>
-            <p className="pt-4 pb-16 max-w-[416px]">
+            <p className="pt-4 pb-8 max-w-[416px]">
               Transform your Real Estate career. <b>Join the TenX Academy</b>{" "}
               and discover the secrets to exponential success in the global real
               estate indusry
@@ -115,9 +115,6 @@ const Conference = () => {
             </div>
           </div>
         </div>
-
-        {/* image cards */}
-        <div className="w-full lg:w-[60vw]"></div>
       </div>
     </main>
   );
