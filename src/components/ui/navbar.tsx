@@ -18,7 +18,7 @@ const Navbar = () => {
   }, [location]);
 
   return (
-    <nav className="z-50 fixed top-0 left-0 w-full bg-opacity-5 py-4">
+    <nav className="z-50 fixed top-0 left-0 w-full bg-opacity-5 bg-white backdrop-blur-md py-2 lg:py-4">
       <div className="container text-white text-sm mx-auto px-2 flex items-center justify-between">
         <Link to={"/"}>
           <img src={logo} alt="" className="h-24" />
