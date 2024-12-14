@@ -25,6 +25,9 @@ const Conference = () => {
         variant: "success",
         title: "Your details have been submitted successfully",
       });
+      setTimeout({
+        window.location.reload();
+      }, 2000)
     } else {
       toast({
         variant: "destructive",
